@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>裁剪框</title>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" type="text/css" href="el-cropper.css">
+<!-- js -->
+<script type="text/javascript" src="vue.js"></script>
+<script src="el-cropper.js"></script>
+</head>
+<body>
+	<!-- 同页面使用多次 -->
+    <div id="app">
+            <!-- 第一次使用 -->
+            <button @click="showcropper">上传照片</button>
+            <el-cropper 
+                    :img="obj.img"
+                    :title="obj.title"
+                    :autocropwidth="obj.autocropwidth"
+                    :details="obj.details"
+                    :fixednumber="obj.fixednumber"
+                    v-if="obj.showhidden"
+                    v-on:getcropperimg='getcropperimg'
+                    v-on:updateimg='updateimg'
+                    @closecropper="closecropper">
+            </el-cropper>
+            <!-- 第二次使用 -->
+            <button @click="showcropper1">上传视屏</button>
+             <el-cropper 
+                    :img="obj2.img"
+                    :title="obj2.title"
+                    :autocropwidth="obj2.autocropwidth"
+                    :details="obj2.details"
+                    v-if="obj2.showhidden"
+                    @getcropperimg='getcropperimg'
+                    @updateimg='updateimg'
+                    @closecropper="closecropper">
+            </el-cropper>
+    </div>
+</body>
+
+<script>
+
+    var app = new Vue({
+        el:'#app',
+        data() {
+            return {
+              obj:{
+                img:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3300305952,1328708913&fm=27&gp=0.jpg',
+                showhidden: false,
+                autocropwidth: 300,
+                title:'上传照片',
+                details:'宝贝详情图片上传有:主图图片上传和宝贝描述里的图片上传。 打开宝贝详情编辑页面 ,先把宝贝的主图图片上',
+                fixednumber:[1,1]
+              },
+              obj2:{
+                img:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg',
+                showhidden: false,
+                autocropwidth: 100,
+                // title 不绑定即为默认
+              },
+            }     
+          
+        },
+        methods: {
+
+            // 上传照片 弹出框显示
+            showcropper(e){
+                this.obj.showhidden=true;
+            },
+
+            // 上传视频 弹出框显示
+            showcropper1(e){
+                this.obj2.showhidden=true;
+            },
+
+            // 弹出框隐藏(在一个页面时使用多次，隐藏绑定同一个方法即可)
+            closecropper(){
+                this.obj.showhidden = false;
+                this.obj2.showhidden = false;
+            },
+                     
+            // (父组件传入imgurl 调用子组件中的上传图片) 更改图片   
+            // 使用场景：父组件中的上传按钮为<input file >可以在onchange事件中 修改传入的图片 调起裁剪框
+            updateimg: function(data){
+                console.log(data.img);
+                this.img = data.img
+            },
+
+            // 裁剪后的图片路径base64
+            getcropperimg: function(data){
+                console.log(data.img);
+                return data.img;
+            },
+        },
+    })
+</script>
+</html>

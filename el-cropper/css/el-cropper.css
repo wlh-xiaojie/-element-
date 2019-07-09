@@ -1,0 +1,211 @@
+ /*弹窗*/
+.el-cropper {
+ /* position: absolute;
+  width: 50%;
+  height: 530px;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  margin-left: -25%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  padding: 10px;*/
+}
+/*标题*/
+ .el-cropper .tit{
+  text-align: left;
+  height:42px;
+  /*padding: 5px 0px;*/
+  line-height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid lightgray
+}
+/* 关闭 */
+.el-close{
+  float:right;   
+}
+/*关闭按钮*/
+.el-close .closebtn {
+    color: black;
+    font-size: 22px;
+    border:0;
+    text-align: center;
+    line-height: 30px;
+    float: right;
+    cursor: pointer;
+    background:#fff;
+    outline:none;
+}
+
+/*功能btn*/
+.el-cropper .l-btn {
+  display: inline-block;
+  outline: none;
+  resize: none;
+  border: none;
+  padding: 5px 20px;
+  background: #409EFF;
+  color: #fff;
+  border: solid 1px #409EFF;
+  border-radius: 3px;
+  font-size: 16px;
+   margin-left:1.3vw; 
+}
+.el-cropper .btn:nth-child(2){
+  margin-left:10px;
+}
+/*中盒*/
+.el-cropper .cropper-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content:space-around;
+  overflow: hidden;
+}
+/*详情*/
+.el-cropper .detailsclass p{
+  text-align:left;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+/**/
+.el-cropper .detailsclass p:first-child{
+  text-align:left;
+  font-weight:400;
+  color: black;
+}
+/**/
+.el-cropper .detailsclass p:last-child{
+	  text-align: left;
+    font-size: 14px;
+    margin-top: -5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+	  font-family: "Arial","Microsoft YaHei","\9ED1\4F53","\5B8B\4F53",sans-serif;
+	  color: #2c3e50;
+  
+}
+/**/
+.el-cropper .cropper{
+  width: 65%;
+  height: 400px;
+  overflow: hidden;
+}
+/**/
+.el-cropper .show-preview{
+  /*flex:1;*/
+  width:230px;
+  height:auto;
+  text-align:left;
+  padding:0px 0px 0px 20px;
+  /*margin-top: 20px;*/
+  /* display: flex; */
+  /* flex-direction:column; */
+  /* align-items:stretch; */
+}
+.el-cropper .detailsclass{
+  width:200px;
+  margin-top: 30px;
+}
+.preview{
+  width:200px;
+  height:200px;
+  background: #ddd;
+}
+.show-preview img{
+  transform-origin: 0 0 0
+}
+.el-cropper .preview{
+  border:1px solid #ccc;
+  overflow: hidden;
+}
+.wait{
+  width:200px;
+  padding: 0px 0px 15px 0px;
+  font-weight: 400;
+  color: black;
+}
+
+/*弹窗底部*/
+.el-cropper .footer-btn{
+  width:100%;
+  margin-top: 30px;
+  height: 60px;
+  overflow: hidden;
+  /*padding:0px 10px;*/
+}
+.el-cropper .scope-btn{
+  width: 70%;
+  /*height: 50px;*/
+  float: left;
+  overflow: hidden;
+}
+.scope-change{
+  width:17%;
+  /*height: */
+  /*background: red;*/
+  float: left;
+}
+.scoper-fun{
+  width:83%;
+  float: left;
+  /*background: red;*/
+  text-align: left;
+}
+.el-cropper .upload-btn{
+  width: 30%;
+  float: left;
+}
+
+/*旋转功能按钮*/
+.el-cropper .btn {
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+  /*margin-right: 25px;*/
+  -webkit-transition: .1s;
+  transition: .1s;
+  font-weight: 500;
+  padding: 8px 1.1vw;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  background-color:#409EFF;
+  border-color: #409EFF;
+}
+.scope-btn .l-btn:nth-child(1){
+  margin-left: 10%;
+}
+[v-cloak]{
+  display: none;
+}
+.el-dialog__header {
+  padding: 14px 20px 10px;
+  font-size: 13px;
+}
+.el-dialog__body {
+    padding: 0px 20px;
+    color: #606266;
+    font-size: 14px;
+    word-break: break-all;
+}
+.el-dialog__title {
+    line-height: 24px;
+    font-size: 16px;
+    color: black;
+}
+
+
+
+
+
+
